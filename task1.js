@@ -26,7 +26,7 @@ function solution(S, K) {
         var splitted = sentence.split('').splice(break_location + 1, sentence.length - break_location);
         counter ++;
         break_location = 0;
-        return wordcount(splitted.join(''), 13);
+        return wordcount(splitted.join(''), K);
       }
     }
   }
