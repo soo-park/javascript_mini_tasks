@@ -31,7 +31,7 @@ function solution(S, K) {
     }
   }
 
-  wordcount(S, K);
+  wordcount(S);
   return counter;
 }
 
