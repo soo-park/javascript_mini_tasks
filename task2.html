@@ -5,7 +5,6 @@
 <body>
   <form>
 
-    person/company, fst===============lst========email==========company=========phone </br>
     <!-- test1: correct case - person</br>
     <input type="radio" id="type_person" name="type" value="person" checked/>
     <input type="radio" id="type_company" name="type" value="company" />
@@ -24,24 +23,33 @@
     <input type="text" id="company_name" name="company_name" value="john's"/>
     <input type="text" id="phone" name="phone" value="234-567-890"/> -->
 
-    <!-- test3: wrong case - person, missing first name</br>
-    <input type="radio" id="type_person" name="type" value="person" checked/>
-    <input type="radio" id="type_company" name="type" value="company"/>
-    <input type="text" id="first_name" name="first_name" value=""/>
+    <!-- test3: missing required item case</br>
+    <input type="radio" id="type_person" name="type" value="person" />
+    <input type="radio" id="type_company" name="type" value="company" checked/>
+    <input type="text" id="first_name" name="first_name" value="me"/>
     <input type="text" id="last_name" name="last_name" value="Doe"/>
     <input type="text" id="email" name="email" value="john@example.com"/>
-    <input type="text" id="company_name" name="company_name" value=""/>
-    <input type="text" id="phone" name="phone" value="234-567-890"/> -->
+    <input type="text" id="company_name" name="company_name" value="asdf"/>
+    <input type="text" id="phone" name="phone" value=""/> -->
 
 <!-- 
-    test4: wrong case- company, missing company name</br>
+    test4: wrong case- email, wrong character</br>
     <input type="radio" id="type_person" name="type" value="person" checked/>
     <input type="radio" id="type_company" name="type" value="company"/>
     <input type="text" id="first_name" name="first_name" value="John"/>
     <input type="text" id="last_name" name="last_name" value="Doe"/>
-    <input type="text" id="email" name="email" value="john@example.com"/>
+    <input type="text" id="email" name="email" value="abc_@abc.com"/>
     <input type="text" id="company_name" name="company_name" value=""/>
     <input type="text" id="phone" name="phone" value="234-567-890"/> -->
+
+    test5: wrong case- phone number: too short of digits</br>
+    <input type="radio" id="type_person" name="type" value="person" />
+    <input type="radio" id="type_company" name="type" value="company" checked/>
+    <input type="text" id="first_name" name="first_name" value="John"/>
+    <input type="text" id="last_name" name="last_name" value="Doe"/>
+    <input type="text" id="email" name="email" value=""/>
+    <input type="text" id="company_name" name="company_name" value="My company"/>
+    <input type="text" id="phone" name="phone" value="234- 77"/>
 
     </form>
 
