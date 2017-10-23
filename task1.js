@@ -1,22 +1,3 @@
-// #long text
-// # upper lower space
-// no leading/trailing/double space
-
-// input
-// text
-
-// output
-// number of messages to send the entier text
-
-// constraints
-// can contain k chracters
-// each must be max length
-// don't split word
-// concatinating messages retrieve original text
-// space at the start and end of the messages are removed
-
-// be correct rather than care for the performance
-
 function solution(S, K) {
   var counter = 1;
   var break_location;
