@@ -1,31 +1,52 @@
-/*
-two non-negative numbers n and m
-
-similar if their decimal representation can be obtained from each other by rearranging their digits. 
-
-Note that a correct decimal representation does not contain leading zeroes
-
-1234 is similar to 2431
-1010 is similar to 1001
-12 is similar to 12
-123 is not similar to 234
-113 is not similar to 133
-100 is not similar to 10
-
-Input: non-negative integer N
-Output: number of non-negative integer similar to N
-*/
-
-
 function solution(N) {
-  
-  // make object of the number string with counter
-  // var NString = N.toString();
-  // for (let i = 0; i < NString.length; i++) {
-  //     console.log(NString[i]);
-  // }
+  var NString = N.toString();
+  var NObj = {};
+  var NLength = NString.length;
 
-  return "a";
+  if (N === 0) {
+    return 1;
+  }
+
+  function factorial(x) {
+    if(x == 0 || x < 0) {
+       return 1;
+    }
+    return x * factorial(x-1);
+  }
+
+  for (let i = 0; i < NString.length; i++) {
+    if (NObj.hasOwnProperty(NString[i])) {
+      NObj[NString[i]]++;
+    } else {
+      NObj[NString[i]] = 1;
+    }
+  }
+
+  // the codility interface does not allow Object.values()
+  var dupe = [];
+  var keys = Object.keys(NObj);
+  for (let i = 0; i < keys.length; i++) {
+    dupe.push(NObj[keys[i]]);
+  }
+
+  var result;
+  var combineDupes = 1;
+  result = factorial(NLength);
+  for (let i = 0; i < dupe.length; i++) {
+    result = result / factorial(dupe[i]);
+  }  
+
+  if (NObj.hasOwnProperty("0")) {
+    dupe[dupe.indexOf(NObj[0])]--;
+    var lengthWithoutHead = NLength - 1;
+    var zeroHeadCase = factorial(lengthWithoutHead);
+    for (let i = 0; i < dupe.length; i++) {
+      zeroHeadCase = zeroHeadCase / factorial(dupe[i]);
+    }
+    result = result - zeroHeadCase;
+  }
+
+  return result;
 }
 
-console.log(solution(100));
+console.log(solution(1010000000));
